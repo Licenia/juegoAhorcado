@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\palabra;
-
+use App\Models\categoria;
 
 class PalabraController extends Controller
 {
@@ -13,7 +13,7 @@ class PalabraController extends Controller
      */
     public function index()
     {
-      
+       
     }
 
     /**
@@ -24,7 +24,8 @@ class PalabraController extends Controller
     public function create()
     {
         //
-        return view ( 'juego.palabra');
+        $datos = categoria::all();
+        return view( 'juego.palabra', compact('datos'));
     }
 
     /**

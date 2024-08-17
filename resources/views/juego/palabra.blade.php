@@ -3,7 +3,7 @@
 @section('title', 'Panel de control')
 
 @section('content_header')
-    <h1>ADMINISTRACION DE PALABRAS</h1>
+<h1>ADMINISTRACION DE PALABRAS</h1>
 @stop
 
 @section('content')
@@ -15,13 +15,13 @@
     @csrf
        <div class="form-group">
         <br />
-        <label for="">Categoria:</label>
-      <select name="">
-        @foreach ($palabra as $palabra)
-        <option value="">{{ $palabra->categorias->nombre ?? 'Sin categoría' }}</option>
-
-        @endforeach
+        <select name="categoria_id">
+            <option value="">Seleccione una categoria</option>
+    @foreach ($datos as $categoria)
+        <option value="{{categoria->id}}">{{ $categoria->nombre}}</option>
+    @endforeach
       </select>
+
     
         <label for=""> Palabra:</label>
          <input type="text" name="nombre" class="form-control" required>

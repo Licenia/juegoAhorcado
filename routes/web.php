@@ -12,6 +12,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -49,6 +50,5 @@ Route::post('categoria/store',[CategoriaController::class,'store'])->name('categ
 Route::get('palabra/create',[PalabraController::class,'create'])->name('palabra.create');
 Route::post('palabra/store',[PalabraController::class,'store'])->name('palabra.store');
 
-Route::get('/','App\Http\Controllers\RelacionController@index'); 
 
 require __DIR__.'/auth.php';

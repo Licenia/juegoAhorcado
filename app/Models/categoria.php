@@ -17,6 +17,6 @@ class categoria extends Model
   
     public function palabras()
     {
-        return $this->hasMany(palabra::class);
+        return $this->hasMany('App\Models\palabra');
     }
 }

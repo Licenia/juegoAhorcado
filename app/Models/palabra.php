@@ -12,14 +12,11 @@ class palabra extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     protected $table = 'palabras';
-    protected $fillable = ['palabra'];
+    protected $fillable = ['palabra','categoria_id'];
 
-public function categorias(){
-       
-        {
-            return $this->belongsTo(categoria::class);
+// Esta funcion es para la relacion de muchos a uno 
+public function categorias(){ 
+            return $this->belongsTo('App\Models\categoria');
     }
 }
 
-
-}
